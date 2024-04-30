@@ -9,7 +9,7 @@ function readDataset() {
 }
 
 async function getSongLyrics(song) {
-    const response = await axios.get('https://genius.com/' + song);
+    const response = await axios.get('https://genius.com/' + song + '-lyrics');
     const dom = new JSDOM(response.data);
     const lyricsRoot = dom.window.document.querySelector('#lyrics-root');
     const lyrics = lyricsRoot.textContent;
